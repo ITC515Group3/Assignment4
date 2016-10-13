@@ -22,8 +22,16 @@ public class Player {
 		this.limit = limit;
 	}
 
-	public boolean balanceExceedsLimit() {
+	/* old code - public boolean balanceExceedsLimit() {
 		return (balance > limit);
+	}
+	Player cannot reach betting limit:
+	Limit set to 0, but game ends with player still with 5 (dollars) remaining
+	
+	solution - return (balance >= limit);
+	*/
+	public boolean balanceExceedsLimit() {
+		return (balance >= limit);
 	}
 	
 	public boolean balanceExceedsLimitBy(int amount) {
@@ -36,9 +44,25 @@ public class Player {
 		balance = balance - bet;
 	}
 	
-	public void receiveWinnings(int winnings) {
+	/*
+	old code - public void receiveWinnings(int winnings) {
 		if (winnings < 0) throw new IllegalArgumentException("Winnings cannot be negative.");
 		balance = balance + winnings;		
+	}
+	
+	Bug 1- Game does not pay out at correct level.
+	When player wins on 1 match, balance does not increase.
+	
+	solution-
+	public void receiveWinnings(int winnings, int bet) {
+		if (winnings < 0) throw new IllegalArgumentException("Winnings cannot be negative.");
+		balance = balance + winnings + bet;		
+	}
+	
+	*/
+	public void receiveWinnings(int winnings, int bet) {
+		if (winnings < 0) throw new IllegalArgumentException("Winnings cannot be negative.");
+		balance = balance + winnings + bet;		
 	}
 	
 	public String toString() {
