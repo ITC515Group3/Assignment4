@@ -50,7 +50,7 @@ public class Player {
 		balance = balance + winnings;		
 	}
 	
-	bug 1- Game does not pay out at correct level.
+	Bug 1- Game does not pay out at correct level.
 	When player wins on 1 match, balance does not increase.
 	
 	solution-
