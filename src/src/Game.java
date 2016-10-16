@@ -41,8 +41,20 @@ public class Game {
 		
 		int winnings = matches * bet;
 
-		if (matches > 0) {			
+		/*
+		old code - if (matches > 0) {			
 			player.receiveWinnings(winnings);
+		}
+		
+		Bug-1: Game does not pay out at correct level.
+		When player wins on 1 match, balance does not increase.
+		Solution
+		if (matches > 0) {			
+			player.receiveWinnings(winnings, bet);
+		}
+		*/
+		if (matches > 0) {			
+			player.receiveWinnings(winnings, bet);
 		}
         return winnings;		
 	}
