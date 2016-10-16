@@ -25,17 +25,26 @@ public class Player {
 	/* old code - public boolean balanceExceedsLimit() {
 		return (balance > limit);
 	}
+	public boolean balanceExceedsLimitBy(int amount) {
+		return (balance - amount >= limit);
+	}
 	Player cannot reach betting limit:
 	Limit set to 0, but game ends with player still with 5 (dollars) remaining
 	
-	solution - return (balance >= limit);
+	solution - public boolean balanceExceedsLimit() {
+		return (balance >= limit);
+	}
+	
+	public boolean balanceExceedsLimitBy(int amount) {
+		return (balance - amount >= limit);
+	};
 	*/
 	public boolean balanceExceedsLimit() {
 		return (balance >= limit);
 	}
 	
 	public boolean balanceExceedsLimitBy(int amount) {
-		return (balance - amount > limit);
+		return (balance - amount >= limit);
 	}
 	
 	public void takeBet(int bet) {
