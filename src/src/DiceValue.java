@@ -1,3 +1,4 @@
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -22,7 +23,9 @@ public enum DiceValue {
 	}
 	
 	public static DiceValue getRandom() {
-		int random = RANDOM.nextInt(DiceValue.SPADE.ordinal());
+            // WE CHANGE THIS , by incrementing 1 , to access the SPADE value , that value is stored in random 
+		int random = RANDOM.nextInt(DiceValue.SPADE.ordinal()+1);
+               //  System.out.println(values()[random]);
 		return values()[random];
 	}
 	
